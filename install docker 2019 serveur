@@ -1,0 +1,21 @@
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+Restart-Computer -Force
+
+
+si fonctionne pas:
+
+
+# Télécharger l'archive Docker (moby/moby static binaries)
+Invoke-WebRequest -UseBasicParsing "https://download.docker.com/win/static/stable/x86_64/docker-25.0.3.zip" -OutFile $env:TEMP\docker.zip
+
+# Extraire dans Program Files
+Expand-Archive $env:TEMP\docker.zip -DestinationPath $Env:ProgramFiles -Force
+
+# Ajouter au PATH
+$env:PATH += ";" + $Env:ProgramFiles + "\docker"
+[Environment]::SetEnvironmentVariable("PATH", $env:PATH, [EnvironmentVariableTarget]::Machine)
+
+# Enregistrer et démarrer le service dockerd
+dockerd --register-service
+Start-Service docker
