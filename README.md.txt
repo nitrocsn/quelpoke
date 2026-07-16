@@ -7,6 +7,8 @@ télécherger go
 
 test
 
+
+testt
 unzip le dossier zip
 
 puis ouvrir un cmd en admin puis se rendre dans le dossier ou il y main.go
