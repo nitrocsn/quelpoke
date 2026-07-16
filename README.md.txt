@@ -1,10 +1,11 @@
 Pour lancer quelpoke 
 
-télécharger le zip
+tÃ©lÃ©charger le zip
 
 
-télécherger go 
+tÃ©lÃ©cherger go 
 
+test
 
 unzip le dossier zip
 
